@@ -1,2 +1,35 @@
-# House-Price-Prediction-Regression
-House price regression on the Ames Housing dataset (Kaggle) | Feature engineering, 9 regression models compared (Linear, Ridge, Lasso, SVR, Decision Tree, Random Forest, Bagging, Gradient Boosting, XGBoost) with cross-validation
+# House Price Prediction - Regression Modeling (Ames Housing Dataset)
+
+End-to-end regression project on the Kaggle Ames Housing dataset, predicting final sale price from house features.
+
+## Project Overview
+Combined train and test sets (2,919 rows, about 80 features) for consistent cleaning and encoding.
+Handled missing values with feature-specific strategies: basement, garage, and lot frontage fields were each imputed differently based on what a missing value means for that feature.
+Converted misclassified numeric columns (year and month fields) to categorical types where appropriate.
+Encoded ordinal quality and condition features (basement condition, exposure, finish type) as ordered categories.
+Corrected skewed numeric features with log transforms, and one-hot encoded the remaining categorical features.
+Scaled features with RobustScaler before modeling.
+
+## Tools Used
+pandas, numpy
+matplotlib, seaborn for EDA, correlation heatmaps, and skewness plots
+scikit-learn for preprocessing, model training, and cross-validation
+XGBoost
+
+## Models Trained and Cross-Validated
+Linear Regression, Ridge, Lasso, Polynomial Regression, SVR, Decision Tree Regressor, Random Forest Regressor, Bagging Regressor, Gradient Boosting Regressor, and XGBoost, each evaluated with K-fold cross-validation (R2).
+
+## Key Steps
+Correlation analysis to identify features most predictive of sale price.
+Missing-value imputation tailored to each feature group rather than one blanket strategy.
+Log-transforming skewed features to improve model performance.
+Final model (SVR) used to generate predictions on the held-out test set and saved with pickle.
+
+## Data Source
+
+Ames Housing dataset via Kaggle's House Prices: Advanced Regression Techniques competition. Used for educational and analytical purposes only.
+
+## Author
+
+Rachna Kandari
+kandari.rachna74@gmail.com | https://www.linkedin.com/in/rachna-kandari/
